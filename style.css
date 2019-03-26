@@ -5,7 +5,11 @@ body {
   margin: 2em;
 }
 
-h1 {
+/* h1 {
   font-style: italic;
   color: #373fff;
+}
+ */
+.main-org{
+  color: #580F8B;
 }

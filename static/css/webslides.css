@@ -3227,8 +3227,8 @@ Slides - Backgrounds <section class="bg-primary">
 
 /*Vertical Gradient*/
 .bg-gradient-v {
-  background: -webkit-gradient(linear, left bottom, left top, from(#580F8B), to(#489FDF));
-  background: linear-gradient(to top, #580F8B 0%, #489FDF 100%); }
+  background: -webkit-gradient(linear, left bottom, left top, from(#489FDF), to(#580F8B));
+  background: linear-gradient(to top, #489FDF 0%, #580F8B 50%); }
 
 /*Radial Gradient*/
 .bg-gradient-r {
