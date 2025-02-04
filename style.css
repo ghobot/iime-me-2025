@@ -17,3 +17,15 @@ h1{
   font-family: 'Ubuntu', 'Roboto', sans-serif;
   
 }
+
+.bg-langone {
+  background-color: #580f8b;
+}
+
+.bg-langone h3 {
+  color: white;
+}
+
+.bg-langone h1 {
+  color: white;
+}
