@@ -3179,7 +3179,9 @@ Slides - Backgrounds <section class="bg-primary">
   background-color: #580f8b;
 }
 
-.bg
+.bg-langone h1 {
+  color: white;
+}
 
 .bg-facebook {
   background-color: #3b5998; }
