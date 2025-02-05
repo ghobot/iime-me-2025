@@ -95,3 +95,16 @@ canvas {
       padding: 3rem 0;
   
 }
+
+ #slide-timer {
+    position: relative;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    transition: opacity 1s ease-in-out;
+    cursor: pointer;
+  }
