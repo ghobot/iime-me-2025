@@ -1,4 +1,5 @@
-let timerElement = document.getElementById('slide-timer');
+ let timerContainer = document.getElementById('timer-container');
+  let timerElement = document.getElementById('slide-timer');
   let toggleButton = document.getElementById('toggle-timer');
   let resetButton = document.getElementById('reset-timer');
 
@@ -18,9 +19,9 @@ let timerElement = document.getElementById('slide-timer');
 
   function resetFadeTimer() {
     clearTimeout(fadeTimeout);
-    timerElement.style.opacity = "1"; // Show timer
+    timerContainer.style.opacity = "1"; // Show timer
     fadeTimeout = setTimeout(() => {
-      timerElement.style.opacity = "0"; // Fade out after 6 sec
+      timerContainer.style.opacity = "0"; // Fade out after 6 sec
     }, 6000);
   }
 
@@ -63,12 +64,12 @@ let timerElement = document.getElementById('slide-timer');
   });
 
   document.addEventListener('ws:slide-change', () => {
-    resetFadeTimer();
+    resetFadeTimer(); // Show timer for 6 sec on slide change
   });
 
   timerElement.addEventListener('click', () => {
-    timerElement.style.opacity = "1";
-    resetFadeTimer();
+    timerContainer.style.opacity = "1"; // Show everything
+    resetFadeTimer(); // Restart fade timer
   });
 
   toggleButton.addEventListener('click', toggleTimer);
