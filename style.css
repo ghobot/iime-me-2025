@@ -71,6 +71,8 @@ canvas {
   padding-bottom: 2px;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
+  border-radius: 0 0 3px 3px;
+
 }
 
 .js-count-particles{
@@ -87,41 +89,21 @@ canvas {
   overflow: hidden;
 }
 
-.count-particles{
-  border-radius: 0 0 3px 3px;
-}
 
 .stretch li{
       padding: 3rem 0;
   
 }
 
-   /* Header container */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0);
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-family: Arial, sans-serif;
-    z-index: 1000;
-  }
-
-  /* Timer container positioned in the upper-right */
+ /* Timer container in the upper-right corner */
   .timer-container {
     position: fixed;
     top: 10px;
     right: 20px;
     background: rgba(0, 0, 0, 0.2);
     color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
+    padding: 5px 10px;
+    border-radius: 5px;
     font-size: 16px;
     font-family: Arial, sans-serif;
     display: flex;
@@ -137,8 +119,13 @@ canvas {
     cursor: pointer;
   }
 
-  /* Buttons (hidden unless hovering) */
-  .timer-container button {
+  /* Buttons (hidden unless hovering over timer) */
+  .timer-buttons {
+    display: none;
+    gap: 5px;
+  }
+
+  .timer-buttons button {
     background: rgba(0, 0, 0, 0.2);
     border: none;
     color: white;
@@ -148,11 +135,11 @@ canvas {
     transition: background 0.3s ease;
   }
 
-  .timer-container button:hover {
+  .timer-buttons button:hover {
     background: rgba(255, 255, 255, 0.4);
   }
 
-  /* Show everything when hovering */
-  .timer-container:hover {
-    opacity: 1 !important;
+  /* Show buttons when hovering over timer */
+  .timer-container:hover .timer-buttons {
+    display: flex;
   }

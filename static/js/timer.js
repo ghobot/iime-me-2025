@@ -1,4 +1,4 @@
- let timerContainer = document.getElementById('timer-container');
+let timerContainer = document.getElementById('timer-container');
   let timerElement = document.getElementById('slide-timer');
   let toggleButton = document.getElementById('toggle-timer');
   let resetButton = document.getElementById('reset-timer');
@@ -60,9 +60,9 @@
   document.addEventListener('DOMContentLoaded', () => {
     if (isRunning) startTimer();
     updateTimer();
-    resetFadeTimer();
   });
 
+  // WebSlides slide change event listener
   document.addEventListener('ws:slide-change', () => {
     resetFadeTimer(); // Show timer for 6 sec on slide change
   });
