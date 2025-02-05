@@ -3,13 +3,33 @@ let timerContainer = document.getElementById('timer-container');
   let toggleButton = document.getElementById('toggle-timer');
   let resetButton = document.getElementById('reset-timer');
 
-  let startTime = localStorage.getItem('startTime') ? parseInt(localStorage.getItem('startTime')) : null;
-  let isRunning = localStorage.getItem('isRunning') === 'true';
+  let startTime = null;
+  let isRunning = false;
   let timerInterval;
   let fadeTimeout;
 
+  // Attempt to get stored timer values safely
+  function loadStoredTimer() {
+    try {
+      const storedStartTime = localStorage.getItem('startTime');
+      const storedIsRunning = localStorage.getItem('isRunning');
+      startTime = storedStartTime ? parseInt(storedStartTime) : null;
+      isRunning = storedIsRunning === 'true';
+
+      if (isRunning) {
+        startTimer();
+      }
+      updateTimer();
+    } catch (e) {
+      console.warn("Local storage access denied or unavailable.");
+    }
+  }
+
   function updateTimer() {
-    if (!startTime) return timerElement.innerText = "0:00";
+    if (!startTime) {
+      timerElement.innerText = "0:00";
+      return;
+    }
 
     let elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
     let minutes = Math.floor(elapsedSeconds / 60);
@@ -27,8 +47,8 @@ let timerContainer = document.getElementById('timer-container');
 
   function startTimer() {
     if (!isRunning) {
-      startTime = Date.now() - (startTime ? (Date.now() - startTime) : 0);
-      localStorage.setItem('startTime', startTime);
+      startTime = startTime ? startTime : Date.now();
+      localStorage.setItem('startTime', startTime.toString());
       timerInterval = setInterval(updateTimer, 1000);
       isRunning = true;
       localStorage.setItem('isRunning', 'true');
@@ -49,8 +69,13 @@ let timerContainer = document.getElementById('timer-container');
     startTime = null;
     timerElement.innerText = "0:00";
     toggleButton.innerText = "Start";
-    localStorage.removeItem('startTime');
-    localStorage.setItem('isRunning', 'false');
+
+    try {
+      localStorage.removeItem('startTime');
+      localStorage.setItem('isRunning', 'false');
+    } catch (e) {
+      console.warn("Failed to clear local storage.");
+    }
   }
 
   function toggleTimer() {
@@ -58,13 +83,14 @@ let timerContainer = document.getElementById('timer-container');
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    if (isRunning) startTimer();
-    updateTimer();
+    loadStoredTimer(); // Load persisted timer on page load
   });
 
-  // WebSlides slide change event listener
-  document.addEventListener('ws:slide-change', () => {
-    resetFadeTimer(); // Show timer for 6 sec on slide change
+  // Detect arrow key presses (left or right) to show the timer for 6 sec
+  document.addEventListener('keydown', (event) => {
+    if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+      resetFadeTimer(); // Show timer for 6 sec on keypress
+    }
   });
 
   timerElement.addEventListener('click', () => {
@@ -74,8 +100,3 @@ let timerContainer = document.getElementById('timer-container');
 
   toggleButton.addEventListener('click', toggleTimer);
   resetButton.addEventListener('click', resetTimer);
-
-  window.addEventListener('beforeunload', () => {
-    localStorage.setItem('startTime', startTime);
-    localStorage.setItem('isRunning', isRunning);
-  });
