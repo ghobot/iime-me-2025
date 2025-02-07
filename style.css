@@ -143,3 +143,8 @@ canvas {
   .timer-container:hover .timer-buttons {
     display: flex;
   }
+
+.spaced li {
+    padding-top:20px;
+  
+}
