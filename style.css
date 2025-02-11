@@ -158,8 +158,8 @@ canvas {
   /* The Font Awesome info icon */
   .info-icon {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 24px;
+    right: -6px;
     width: 28px;
     height: 28px;
     background: rgba(0, 0, 0, 0.6);
