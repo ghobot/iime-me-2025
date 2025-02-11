@@ -148,3 +148,57 @@ canvas {
     padding-top:20px;
   
 }
+
+/* Container for media */
+  .media-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* The Font Awesome info icon */
+  .info-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s ease-in-out;
+  }
+
+  /* Icon hover effect */
+  .info-icon:hover {
+    background: rgba(255, 255, 255, 0.7);
+    color: black;
+    transform: scale(1.1);
+  }
+
+  /* Caption box */
+  .caption-box {
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+    width: 220px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    z-index: 10;
+  }
+
+  /* Show caption when hovering over icon */
+  .info-icon:hover + .caption-box,
+  .caption-box:hover {
+    display: block;
+    opacity: 1;
+  }
