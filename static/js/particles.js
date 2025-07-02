@@ -1,9 +1,9 @@
 /* ---- particles.js config ---- */
 
-particlesJS("particles-js", {
+particlesJS( "particles-js", {
   "particles": {
     "number": {
-      "value": 10,
+      "value": 20,
       "density": {
         "enable": true,
         "value_area": 800
@@ -23,8 +23,8 @@ particlesJS("particles-js", {
       },
       "image": {
         "src": "img/github.svg",
-        "width": 200,
-        "height": 200
+        "width": 100,
+        "height": 100
       }
     },
     "opacity": {
@@ -38,7 +38,7 @@ particlesJS("particles-js", {
       }
     },
     "size": {
-      "value": 10,
+      "value": 30,
       "random": true,
       "anim": {
         "enable": false,
@@ -56,7 +56,7 @@ particlesJS("particles-js", {
     },
     "move": {
       "enable": true,
-      "speed": 3,
+      "speed": 1,
       "direction": "none",
       "random": false,
       "straight": false,
@@ -131,4 +131,4 @@ particlesJS("particles-js", {
 //   }
 //   requestAnimationFrame(update);
 // };
-requestAnimationFrame(update);
+// requestAnimationFrame(update);

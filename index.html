@@ -103,6 +103,37 @@
     <!-- Android -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#333333" />
+    <style>
+    footer img {
+      height: 6rem;
+    }
+
+    .ask-me-about .background-right-bottom {
+      background-image: url('https://cdn.glitch.com/510f3845-b5c2-45da-a2d2-47f3c1cafb9b%2Fgreg_d_noBG.png?1553746888885');
+    }
+
+    .photogrammetry p {
+      font-weight: normal;
+      font-size: 13px;
+      color: #4a4a4a;
+      margin: 5px;                
+    }
+
+    .photogrammetry a {
+       font-weight: bold; 
+       color: #1caad9;
+    }
+
+    .project-divider .background {
+      background-image: url('https://cdn.glitch.com/b5a214a6-997b-4280-be5c-040f671f7765%2FPGC_images_10.png?1553117786838');
+    }
+
+    .thanks .background {
+
+      background-image: url('https://cdn.glitch.com/b5a214a6-997b-4280-be5c-040f671f7765%2FPGC_images_1.png?1553118660143');
+    }
+
+    </style>
   </head>
   <body>
     <!--     me header -->
@@ -161,9 +192,10 @@
                       height="600"
                       src="https://sketchfab.com/models/8391a9ab53e5417cba80439b758ca5b1/embed?autospin=0.2&amp;autostart=1&amp;camera=0&amp;preload=1&amp;transparent=1&amp;ui_controls=0&amp;ui_infos=0"
                       frameborder="0"
-                      allow="autoplay; fullscreen; vr"
+                      allow="autoplay; fullscreen; vr; camera; microphone; encrypted-media"
                       mozallowfullscreen="true"
-                      webkitallowfullscreen="true"
+                      webkitallowfullscreen="true"   
+                      allow="fullscreen; vr; camera; microphone; xr; encrypted-media; accelerometer; gyroscope; picture-in-picture"
                     ></iframe>
                   </div>
                 </div>
@@ -179,6 +211,8 @@
             <video
               class="light"
               autoplay
+              muted 
+              playsinline
               loop
               poster="https://cdn.glitch.com/b5a214a6-997b-4280-be5c-040f671f7765%2FIIME.jpg?1553119467729"
             >
@@ -219,6 +253,7 @@
                     src="https://www.google.com/maps/d/u/0/embed?mid=1mZD3ssmei7XmpoWGcJN88-3raGy5v-g&ehbc=2E312F&noprof=1"
                     width="100%"
                     height="480px"
+                    allow="fullscreen; vr; camera; microphone; xr; encrypted-media; accelerometer; gyroscope; picture-in-picture"
                     frameborder="0"
                     style="border: 0; margin-top: -100px"
                   ></iframe>
@@ -255,7 +290,7 @@
         <!-- Something about me Hobbies-->
         <section class="bg-langone fullscreen">
           <div class="embed">
-            <video class="light" autoplay loop poster="">
+            <video class="light" autoplay muted playsinline loop poster="">
               <source
                 src="https://cdn.glitch.me/dd1d3d0c-8eba-454c-990e-a452251a054a/kyle_pool_drone.mp4?v=1738943536180"
                 type="video/mp4"
@@ -301,6 +336,8 @@
               class="light"
               autoplay
               loop
+              muted 
+              playsinline
               poster="https://cdn.glitch.com/b5a214a6-997b-4280-be5c-040f671f7765%2FIIME.jpg?1553119467729"
             >
               <source
@@ -374,11 +411,16 @@
               <iframe
                 src="https://editor.p5js.org/ghobot/full/ANiORGU1-"
                 style="height: 60vh"
+                allow="fullscreen; vr; camera; microphone; xr; encrypted-media; accelerometer; gyroscope; picture-in-picture"
+                allowfullscreen
+                frameborder="0"
               ></iframe>
             </div>
           </div>
           <!-- .end .wrap -->
         </section>
+        <!-- A day in my work life software -->
+        
 
         <!-- A day in my work faculty Empowerment         -->
         <section class="bg-purple">
@@ -393,7 +435,7 @@
           <!-- .end .wrap -->
         </section>
         <!-- What you can ask me about-->
-        <section class="bg-langone fullscreen">
+        <section  class="ask-me-about bg-langone fullscreen">
           <div class="wrap grid sm vertical-align">
             <div class="column">
               <h1 class="">
@@ -448,18 +490,14 @@
           </div>
           <span
             class="background-right-bottom"
-            style="
-              background-image:url('https://cdn.glitch.com/510f3845-b5c2-45da-a2d2-47f3c1cafb9b%2Fgreg_d_noBG.png?1553746888885');
-            "
           ></span>
           <!-- .end .wrap -->
         </section>
 
         <!-- A project i am working on -->
-        <section class="bg-purple">
+        <section class="project-divider bg-purple">
           <span
-            class="background light"
-            style="background-image:url('https://cdn.glitch.com/b5a214a6-997b-4280-be5c-040f671f7765%2FPGC_images_10.png?1553117786838)"
+            class="background light"            
           ></span>
           <!--.wrap = container (width: 90%) -->
           <div class="wrap aligncenter fadeInUp text-shadow">
@@ -484,7 +522,9 @@
               </div>
               <div class="column">
                 <div class="embed">
-                  <iframe src="flowers.html"></iframe>
+                  <iframe src="flowers.html"
+                  allow="fullscreen; vr; camera; microphone; xr; encrypted-media; accelerometer; gyroscope; picture-in-picture"
+                  ></iframe>
                 </div>
               </div>
               <!-- end .column -->
@@ -508,7 +548,9 @@
               </div>
               <div class="column">
                 <div class="embed">
-                  <iframe src="ostrich.html"></iframe>
+                  <iframe src="ostrich.html"
+                  allow="fullscreen; vr; camera; microphone; xr; encrypted-media; accelerometer; gyroscope; picture-in-picture"
+                  ></iframe>
                 </div>
               </div>
               <!-- end .column -->
@@ -533,13 +575,16 @@
               </div>
               <div class="column">
                 <div class="embed">
-                  <iframe src="plexus.html"></iframe>
+                  <iframe src="plexus.html"
+                  allow="fullscreen; vr; camera; microphone; xr; encrypted-media; accelerometer; gyroscope; picture-in-picture"
+                  ></iframe>
+                  
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="bg-gradient-v">
+        <section class="photogrammetry bg-gradient-v">
           <div class="wrap">
             <div class="grid">
               <div class="column">
@@ -552,7 +597,7 @@
                       allowfullscreen
                       mozallowfullscreen="true"
                       webkitallowfullscreen="true"
-                      allow="autoplay; fullscreen; xr-spatial-tracking"
+                      allow="fullscreen; vr; camera; microphone; xr; encrypted-media; accelerometer; gyroscope; picture-in-picture"
                       xr-spatial-tracking
                       execution-while-out-of-viewport
                       execution-while-not-rendered
@@ -560,19 +605,11 @@
                       src="https://sketchfab.com/models/2e1336c01ee644878a69d8f13b3f0db0/embed?autostart=1&preload=1&ui_animations=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_help=0&ui_settings=0&ui_vr=0&ui_annotations=0&ui_theme=dark&dnt=1"
                     >
                     </iframe>
-                    <p
-                      style="
-                        font-size: 13px;
-                        font-weight: normal;
-                        margin: 5px;
-                        color: #4a4a4a;
-                      "
-                    >
+                    <p>
                       <a
                         href="https://sketchfab.com/3d-models/template-5815tmo-mediastinum-2e1336c01ee644878a69d8f13b3f0db0?utm_medium=embed&utm_campaign=share-popup&utm_content=2e1336c01ee644878a69d8f13b3f0db0"
                         target="_blank"
-                        rel="nofollow"
-                        style="font-weight: bold; color: #1caad9"
+                        rel="nofollow"                       
                       >
                         [TEMPLATE] 5815TMO Mediastinum
                       </a>
@@ -581,7 +618,7 @@
                         href="https://sketchfab.com/NYUSOMAnatomy?utm_medium=embed&utm_campaign=share-popup&utm_content=2e1336c01ee644878a69d8f13b3f0db0"
                         target="_blank"
                         rel="nofollow"
-                        style="font-weight: bold; color: #1caad9"
+                       
                       >
                         Living Anatomy
                       </a>
@@ -590,7 +627,7 @@
                         href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=2e1336c01ee644878a69d8f13b3f0db0"
                         target="_blank"
                         rel="nofollow"
-                        style="font-weight: bold; color: #1caad9"
+                       
                         >Sketchfab</a
                       >
                     </p>
@@ -606,7 +643,9 @@
                 <h4 class="text-context">Radiance Field 3D Gaussian Splat</h4>
                 <div>
                   <div class="embed">
-                    <iframe src="mediastinum.html"> </iframe>
+                    <iframe src="mediastinum.html"
+                    allow="fullscreen; vr; camera; microphone; xr; encrypted-media; accelerometer; gyroscope; picture-in-picture"
+                    > </iframe>
                   </div>
                   <p class="text-intro">
                     Solved by
@@ -688,10 +727,9 @@
           <!-- .end .wrap -->
         </section>
 
-        <section class="bg-purple">
+        <section class="thanks bg-purple">
           <span
             class="background light"
-            style="background-image:url('https://cdn.glitch.com/b5a214a6-997b-4280-be5c-040f671f7765%2FPGC_images_1.png?1553118660143)"
           ></span>
           <div class="wrap">
             <div class="content-right">
@@ -725,8 +763,7 @@
               target="_blank"
               width="100px"
               title="NYU Langone Health"
-              ><img
-                style="height: 6rem"
+              ><img                
                 src="https://cdn.glitch.me/dd1d3d0c-8eba-454c-990e-a452251a054a/nyu_pill.png?v=1738692424648"
                 alt="NYU Langone Health"
               />
@@ -742,8 +779,7 @@
               width="100px"
               title="NYU Langone Health"
             >
-              <img
-                style="height: 6rem"
+              <img               
                 src="https://cdn.glitch.me/dd1d3d0c-8eba-454c-990e-a452251a054a/NYUGSOM_logo_White_RGB.svg?v=1738776298627"
                 alt="NYU Langone Health" /></a
           ></span>
